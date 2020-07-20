@@ -1,0 +1,81 @@
+
+<!doctype html><!--声明当前文档为html文档-->
+<html lang="en"><!--语言为英语-->
+	<head><!--头部-->
+		<meta charset="UTF-8"><!--字符编码：utf-8国际编码  gb2312中文编码-->
+		<meta name="Keywords" content="关键词">
+		<meta name="Description" content="描述">
+		<title>Document</title>
+		<style>/*css样式表的衣柜*/
+		body{
+			perspective:1200px;/*视镜(必须添加到父级元素)  3d立方体的时候该值800-1200效果比较好*/
+		}
+		#box{
+			margin:400px auto; 
+			width:300px;height:300px;
+			border:5px solid #000;
+			transform-style:preserve-3d;/*建立3D空间(必须添加到父级元素)*/ 
+			transition:5s;
+			position:relative;
+			transform:rotateY(0deg);
+		}
+		#box div{
+			width:300px;height:300px;
+			background-size:100% 100%;
+			text-align:center;
+			position:absolute;
+			line-height:300px;
+			font-size:100px;
+		}
+		#box div:nth-child(1){
+			background:url("http://img1.3lian.com/2015/w7/98/d/22.jpg");	
+			left:0px;top:-300px;
+			transform-origin:bottom;
+			transform: translateZ(150px) rotateX(90deg);
+		} 
+		#box div:nth-child(2){
+			background:url("http://img1.3lian.com/2015/w7/90/d/1.jpg");	
+			left:0px;top:300px;
+			transform-origin:top;
+			transform: translateZ(150px) rotateX(-90deg);
+		}
+		#box div:nth-child(3){
+			background:url("http://www.bz55.com/uploads1/allimg/120312/1_120312100435_8.jpg");	
+			left:0px;top:0px;
+			transform: translateZ(150px);
+		}
+		#box div:nth-child(4){
+			background:url("http://pic15.nipic.com/20110731/8022110_162804602317_2.jpg");	
+			transform-origin:center;
+			transform: translateZ(-150px) rotateY(180deg);
+		}
+		#box div:nth-child(5){
+			background:url("http://a0.att.hudong.com/15/08/300218769736132194086202411_950.jpg");	
+			left:-300px;top:0px;
+			transform-origin:right;
+			transform: translateZ(150px) rotateY(-90deg);
+		}
+		#box div:nth-child(6){
+			background:url("http://img1.3lian.com/2015/w7/98/d/22.jpg");	
+			left:300px;top:0px;
+			transform-origin:left;
+			transform: translateZ(150px) rotateY(90deg);
+		}
+		/*transform: translateZ(150px);是为了将盒子的中心固定在屏幕上，也就是z=0处*/
+ 
+		#box:hover{
+			transform: rotateX(360deg);
+		}
+		</style>
+	</head>
+	<body><!--身体-->
+		<div id="box">
+			<div>上</div>
+			<div>下</div>
+			<div>前</div>
+			<div>后</div>
+			<div>左</div>
+			<div>右</div>
+		</div>
+	</body>
+</html>
